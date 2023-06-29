@@ -7,6 +7,15 @@
 */
 
 function isPalindrome(str) {
+  str = str.split(" ").join("").toLowerCase().replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").replace(/\s{2,}/g, " ");
+  var start =0;
+  var end = str.length - 1;
+
+  while(start < end){
+    if(str[start] != str[end]) return false;
+    start++;
+    end--;
+  }
   return true;
 }
 
